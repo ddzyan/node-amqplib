@@ -1,0 +1,14 @@
+{
+  "name": "amqplib",
+  "version": "1.0.0",
+  "description": "nodejs 使用 amqplib 模块连接 rabbitmq服务，实现消息的发送和接收",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.6"
+  }
+}
