@@ -4,11 +4,16 @@ nodejs 使用 amqplib 模块连接 rabbitmq 服务，实现消息的发送和接
 
 参考文档：https://github.com/squaremo/amqp.node/tree/master/examples/tutorials
 
-### 消息队列的作用
+消息队列的作用
 
 1. 应用解耦
 2. 任务异步处理
 3. 流量消峰
+
+rabbitMq5 种使用模式
+
+1. 简单模式--hello word
+2. 工作模式--work
 
 ## 使用
 
@@ -48,6 +53,16 @@ node ./consumer.js
 
 #### 简单模式
 
+一个生产者 P 发送消息到一个队列 Q,一个消费者 C 接收。
+
 实例代码：helloWord 文件夹
 
-![](https://i.imgur.com/AYwjffM.png)
+![](https://i.imgur.com/rGIqlf3.png)
+
+#### 工作模式
+
+一个生产者 P 发送消息到一个队列 Q，多个消费者 C 按照绑定顺序依次接收消息。
+
+实例代码：work 文件夹
+
+![](https://i.imgur.com/awHUM0h.png)
