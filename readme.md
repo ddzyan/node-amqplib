@@ -37,9 +37,9 @@ yarn
 
 cd helloWord
 
-// 启动生产者第三个参数为消息内容
+# 启动生产者第三个参数为消息内容
 node ./producer.js
 
-// 启动消费者
+# 启动消费者
 node ./consumer.js
 ```
