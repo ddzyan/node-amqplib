@@ -43,3 +43,11 @@ node ./producer.js
 # 启动消费者
 node ./consumer.js
 ```
+
+### 模式价绍
+
+#### 简单模式
+
+实例代码：helloWord 文件夹
+
+![](https://i.imgur.com/AYwjffM.png)
