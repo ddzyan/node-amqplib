@@ -1,23 +1,10 @@
-## 简介
+[TOC]
 
-nodejs 使用 amqplib 模块连接 rabbitmq 服务，实现消息的发送和接收
+此文章内容核心为 nodejs 如何实现 [rabbitMq 的五种常见的工作模式](https://github.com/ddzyan/node-amqplib)，其余内容来自于百度/谷歌。
 
-参考文档：https://github.com/squaremo/amqp.node/tree/master/examples/tutorials
+## RabbitMq 环境创建
 
-消息队列的作用
-
-1. 应用解耦
-2. 任务异步处理
-3. 流量消峰
-
-rabbitMq5 种使用模式
-
-1. 简单模式--hello word
-2. 工作模式--work
-
-## 使用
-
-### docker 部署 rabbitMQ
+### docker 构建
 
 ```shell
 # 拉去镜像 management 为带管理界面
@@ -27,7 +14,7 @@ docker pull rabbitmq:management
 docker run -dit --name Myrabbitmq -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=admin -p 15672:15672 -p 5672:5672 rabbitmq:management
 ```
 
-### 登录后台
+### 使用
 
 RabbitMQ 后台管理界面地址：http://192.168.100.117:15672
 
@@ -35,37 +22,31 @@ RabbitMQ 后台管理界面地址：http://192.168.100.117:15672
 
 默认密码：admin
 
-### 启动服务
+nodejs 参考代码：https://github.com/ddzyan/node-amqplib
 
-```shell
-yarn
+## RabbitMQ 核心内容
 
-cd helloWord
+rabbitMq 采用的消息体为 amqp(advance message queue protocol)高级消息队列协议，支持 restFul-Api 调用，支持跨语言。
 
-# 启动生产者第三个参数为消息内容
-node ./producer.js
+消息队列的主要作用：
 
-# 启动消费者
-node ./consumer.js
-```
+1. 服务解耦：承担微服务之间的消息通讯
+2. 任务异步：将任务推送到消息队列种集中处理，不影响主进程处理进度。
+3. 流量削峰：定时定量统一处理任务，防止因为高流量导致服务奔溃。
 
-### 模式价绍
+### 5 种工作模式
 
-#### 简单模式
+#### 简单模式(hello word)
 
-一个生产者 P 发送消息到一个队列 Q,一个消费者 C 接收。
+生产者 P 往一个消息通道 Q 发送消息，并且由一个消费者 C 进行消费
 
-实例代码：helloWord 文件夹
+![简单模式](https://i.imgur.com/rGIqlf3.png)
 
-![](https://i.imgur.com/rGIqlf3.png)
+#### 工作模式(work)
 
-#### 工作模式
+生产者 P 往一个消息通道 Q 发送消息，并且由多个消费者 C 按照绑定顺序依次消费
 
-一个生产者 P 发送消息到一个队列 Q，多个消费者 C 按照绑定顺序依次接收消息。
-
-实例代码：work 文件夹
-
-![](https://i.imgur.com/awHUM0h.png)
+![工作模式](https://i.imgur.com/awHUM0h.png)
 
 #### 订阅模式(publish/subcribe)
 
@@ -82,3 +63,7 @@ node ./consumer.js
 3. direct：定向，将消息发送给指定的 routing key 队列种
 
 ![发布订阅模式](https://i.imgur.com/DMdhQIq.png)
+
+#### 路由模式(router)
+
+#### 通配符模式(topic)
