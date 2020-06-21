@@ -66,3 +66,17 @@ node ./consumer.js
 实例代码：work 文件夹
 
 ![](https://i.imgur.com/awHUM0h.png)
+
+#### 订阅模式(publish/subcribe)
+
+生产者 P 往交换机 X 发送消息，交换机根据设定的交换机类型，将符合条件的信息发送到绑定的队列 Q，绑定指定队列的消费者 C 接收和处理消息
+
+消息不再直接发送给队列，而是发送给交换机，由交换机推送到指定队列。但是交换机不具备存储消息的能力，所以如果没有符合条件的队列，则消息将丢失。
+
+常见的交换机类型：
+
+1. fanout：广播，将消息发送给所有绑定交换机的队列
+2. topic：通配符，将消息发送给符合 routing parrtem 的队列种
+3. direct：定向，将消息发送给指定的 routing key 队列种
+
+![发布订阅模式](https://i.imgur.com/DMdhQIq.png)
