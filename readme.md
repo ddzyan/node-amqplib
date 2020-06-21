@@ -1,13 +1,17 @@
 ## 简介
-nodejs 使用 amqplib 模块连接 rabbitmq服务，实现消息的发送和接收
+
+nodejs 使用 amqplib 模块连接 rabbitmq 服务，实现消息的发送和接收
 
 ### 消息队列的作用
+
 1. 应用解耦
 2. 任务异步处理
 3. 流量消峰
 
 ## 使用
-### docker部署rabbitMQ
+
+### docker 部署 rabbitMQ
+
 ```shell
 # 拉去镜像 management 为带管理界面
 docker pull rabbitmq:management
@@ -16,11 +20,24 @@ docker pull rabbitmq:management
 docker run -dit --name Myrabbitmq -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=admin -p 15672:15672 -p 5672:5672 rabbitmq:management
 ```
 
-RabbitMQ后台管理界面地址：192.168.33.117:15672
+### 登录后台
+
+RabbitMQ 后台管理界面地址：http://192.168.100.117:15672
+
+默认账号：admin
+
+默认密码：admin
 
 ### 启动服务
-```shell
-yarn 
 
-node index
+```shell
+yarn
+
+cd helloWord-promise
+
+// 启动生产者第三个参数为消息内容
+node ./producer.js "hello word"
+
+// 启动消费者
+node ./consumer.js
 ```
