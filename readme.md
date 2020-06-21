@@ -2,6 +2,8 @@
 
 nodejs 使用 amqplib 模块连接 rabbitmq 服务，实现消息的发送和接收
 
+参考文档：https://github.com/squaremo/amqp.node/tree/master/examples/tutorials
+
 ### 消息队列的作用
 
 1. 应用解耦
@@ -33,10 +35,10 @@ RabbitMQ 后台管理界面地址：http://192.168.100.117:15672
 ```shell
 yarn
 
-cd helloWord-promise
+cd helloWord
 
 // 启动生产者第三个参数为消息内容
-node ./producer.js "hello word"
+node ./producer.js
 
 // 启动消费者
 node ./consumer.js
