@@ -60,7 +60,7 @@ rabbitMq 采用的消息体为 amqp(advance message queue protocol)高级消息�
 2. topic：通配符，将消息发送给符合 routing parrtem 的队列种（通配符模式）
 3. direct：定向，将消息发送给指定的 routing key 队列种（路由模式）
 
-![发布订阅模式](https://i.imgur.com/DMdhQIq.png)
+![发布订阅模式](https://github.com/ddzyan/node-amqplib/blob/master/rabbitMq-%E5%8F%91%E5%B8%83%E6%A8%A1%E5%BC%8F.png)
 
 #### 路由模式(router)
 
