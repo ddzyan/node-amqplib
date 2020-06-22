@@ -38,13 +38,13 @@ rabbitMq 采用的消息体为 amqp(advance message queue protocol)高级消息�
 
 生产者 P 往一个消息通道 Q 发送消息，并且由一个消费者 C 进行消费
 
-![简单模式](https://github.com/ddzyan/node-amqplib/blob/master/rabbitMq-%E7%AE%80%E5%8D%95%E6%A8%A1%E5%BC%8F.png)
+<img src="https://github.com/ddzyan/node-amqplib/blob/master/rabbitMq-%E7%AE%80%E5%8D%95%E6%A8%A1%E5%BC%8F.png" width = "100%" height = "70%" alt="" align=center />
 
 #### 工作模式(work)
 
 生产者 P 往一个消息通道 Q 发送消息，并且由多个消费者 C 按照绑定顺序依次消费
 
-![工作模式](https://github.com/ddzyan/node-amqplib/blob/master/rabbitMq-%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F.png)
+<img src="https://github.com/ddzyan/node-amqplib/blob/master/rabbitMq-%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F.png" width = "100%" height = "70%" alt="" align=center />
 
 #### 订阅模式(publish/subcribe)
 
@@ -60,7 +60,7 @@ rabbitMq 采用的消息体为 amqp(advance message queue protocol)高级消息�
 2. topic：通配符，将消息发送给符合 routing parrtem 的队列种（通配符模式）
 3. direct：定向，将消息发送给指定的 routing key 队列种（路由模式）
 
-![发布订阅模式](https://github.com/ddzyan/node-amqplib/blob/master/rabbitMq-%E5%8F%91%E5%B8%83%E6%A8%A1%E5%BC%8F.png)
+<img src="https://github.com/ddzyan/node-amqplib/blob/master/rabbitMq-%E5%8F%91%E5%B8%83%E6%A8%A1%E5%BC%8F.png" width = "100%" height = "70%" alt="" align=center />
 
 #### 路由模式(router)
 
