@@ -66,6 +66,6 @@ rabbitMq 采用的消息体为 amqp(advance message queue protocol)高级消息�
 
 生产者 P 往交换机 X 发送消息，交换机再往符合条件的路由队列发送消息，绑定指定队列的消费者 C 接收和处理消息
 
-![路由模式](https://github.com/ddzyan/node-amqplib/blob/master/rabbitMq-%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F.png)
+<img src="https://github.com/ddzyan/node-amqplib/blob/master/rabbitMq-%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F.png" width = "200" height = "300" alt="" align=center />
 
 #### 通配符模式(topic)
