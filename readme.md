@@ -22,8 +22,6 @@ RabbitMQ 后台管理界面地址：http://192.168.100.117:15672
 
 默认密码：admin
 
-nodejs 参考代码：https://github.com/ddzyan/node-amqplib
-
 ## RabbitMQ 核心内容
 
 rabbitMq 采用的消息体为 amqp(advance message queue protocol)高级消息队列协议，支持 restFul-Api 调用，支持跨语言。
