@@ -84,3 +84,4 @@ rabbitMq 采用的消息体为 amqp(advance message queue protocol)高级消息�
 2. 通配符\*则只能匹配到一个，例如 log.\*则只能匹配 log.info，不能匹配 log.info.add
 
 一般常用#来进行多个路由匹配
+<img src="https://i.imgur.com/1fQJo83.png" width = "100%" height = "70%" alt="" align=center />
